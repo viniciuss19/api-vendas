@@ -1,8 +1,8 @@
 # api-vendas xbrain
 ----------------------------------------------------------------------------------------------------------------
-Para testar a API, selecione seu aplicativo de testes favorito (POSTMAN, Insomnia, etc...)
+Para testar a API, selecione seu aplicativo de testes favorito (POSTMAN, Insomnia, etc...) <br>
 
-Inicialmente a porta configurada é a localhost:8090
+Inicialmente a porta configurada é a 8090
 ---------------------------------------------------------------
 Abaixo estará listado como fazer os testes dos métodos exigidos e suas respectivas rotas:
 
