@@ -14,9 +14,7 @@ Passe um JSON pelo corpo da requisição, dessa maneira, por exemplo:
 { 
 
 	"amount": 1500,
-        
 	"salesmanId: 1,
-        
 	"salesmanName: "Vinicius"
   
 }
