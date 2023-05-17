@@ -4,7 +4,12 @@ public class CreateSaleDTO {
     public float amount;
     public Long salesmanId;
     public String salesmanName;
-    
+
+//Criando uma DTO para transferir e tratar dados específicos para os metodos.
+
+
+
+
     public float getAmount() {
         return amount;
     }

@@ -17,24 +17,29 @@ import com.xbrainapi.api.repositories.*;
 @RestController
 @RequestMapping("/sale")
 public class SaleHandler {
-    private final SaleRepository saleRepository;
+    
     private final SalesmanRepository salesmanRepository;
+    private final SaleRepository saleRepository;
 
     public SaleHandler(SaleRepository saleRepository, SalesmanRepository salesmanRepository) {
-        this.saleRepository = saleRepository;
+
         this.salesmanRepository = salesmanRepository;
+        this.saleRepository = saleRepository;
     }
 
     @PostMapping
-    public Salesman createSale(@RequestBody CreateSaleDTO data) {
-       Sale newSale = new Sale();
-       Optional<Salesman> salesmantest = salesmanRepository.findById(data.salesmanId);
-       Salesman salesman = salesmantest.orElseThrow();
-        salesman.setName(data.getSalesmanName());
-        salesman.setId(data.getSalesmanId());
-       newSale.setAmount(data.amount);
-       newSale.setSalesman(salesman);
+    public Sale createSale(@RequestBody CreateSaleDTO data) {
+        Sale newSale = new Sale();
 
-       return salesmanRepository.save(salesman);
+        Salesman salesman = new Salesman();
+        salesman.setId(data.salesmanId);
+        salesman.setName(data.salesmanName);
+        
+        newSale.setSalesman(salesman);
+        newSale.setAmount(data.amount);
+        
+
+        return saleRepository.save(newSale);
+    } //metodo jpa pra salvar no banco
 }
-}
+

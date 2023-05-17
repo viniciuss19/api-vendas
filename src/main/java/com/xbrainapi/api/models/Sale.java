@@ -7,12 +7,12 @@ import java.time.LocalDate;
 
 @Entity
 public class Sale {
-    private @Id @GeneratedValue(strategy=GenerationType.AUTO) Long id;
-    private @CreationTimestamp LocalDate createdAt;
+    private @Id @GeneratedValue(strategy=GenerationType.AUTO) Long id;      //responsabilizando o BD pelo incremento do ID
+    private @CreationTimestamp LocalDate createdAt;     
     private float amount;
-    @ManyToOne(cascade = {CascadeType.ALL})
-    @JoinColumn(name="salesman_id")
-    private Salesman salesman;
+    @ManyToOne(cascade = {CascadeType.ALL}) 
+    @JoinColumn(name="salesman_id") 
+    private Salesman salesman;  
 
     public Long getId() {
         return id;
